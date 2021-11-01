@@ -12,8 +12,10 @@ class OtherActivity : AppCompatActivity() {
 
         returnTomainBtn. setOnClickListener {
 
-            val myIntent = Intent(this, MainActivity::class.java)
-            startActivity(myIntent)
+//            val myIntent = Intent(this, MainActivity::class.java)
+//            startActivity(myIntent)
+
+            finish()
 
         }
 
