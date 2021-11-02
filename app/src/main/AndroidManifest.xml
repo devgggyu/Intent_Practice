@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Intent_Practice">
         <activity
+            android:name=".EditNickMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MessageActivity2"
             android:exported="false" />
         <activity
