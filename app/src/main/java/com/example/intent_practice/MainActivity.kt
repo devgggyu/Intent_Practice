@@ -2,6 +2,7 @@ package com.example.intent_practice
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,7 +15,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        editNicknameBtn.setOnClickListener {
+//        DIAL 액션 예제
+
+        dialBtn.setOnClickListener {
+
+//            phoneNumEdt에 입력한 전화번호를 받아서 => 해당 번호에 전화 연결
+
+            val inputPhoneNum = phoneNumEdt.text.toString()
+
+            val myuri = Uri.parse("tel:${inputPhoneNum}")
+
+            val myIntent = Intent(Intent.ACTION_DIAL, myuri)
+
+            startActivity(myIntent)
+        }
+
+      editNicknameBtn.setOnClickListener {
 
             val myIntent = Intent(this,EditNickMainActivity::class.java)
             startActivityForResult(myIntent,REQUEST_FOR_NICKNAME )
